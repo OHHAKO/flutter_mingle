@@ -1,0 +1,10 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# Rule: 파일 이름 규칙
+
+- 화면을 표현하는 파일은 snake_case 네이밍 문법으로 이름을 지으세요.
+- 예시: home_page.dart

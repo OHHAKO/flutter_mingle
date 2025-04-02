@@ -1,0 +1,9 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# Your rule content
+
+- package를 사용할때 deprecated된 메서드나 클래스는 지양하세요.

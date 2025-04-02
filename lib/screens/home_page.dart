@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../constants/colors.dart';
 import '../main.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,12 +23,12 @@ class HomeScreen extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Icon(Icons.pets, size: 32, color: Color(0xFF8B4513)),
+                    const Icon(Icons.pets, size: 32, color: AppColors.iconBrown),
                     const SizedBox(width: 8),
                     Text(
                       'Today\'s Thought',
                       style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                        color: const Color(0xFF8B4513),
+                        color: AppColors.textBrown,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -37,7 +38,7 @@ class HomeScreen extends StatelessWidget {
                 Text(
                   appState.current.asLowerCase,
                   style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                    color: const Color(0xFF8B4513),
+                    color: AppColors.textBrown,
                   ),
                 ),
                 const SizedBox(height: 20),

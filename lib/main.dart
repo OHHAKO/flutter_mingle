@@ -2,8 +2,9 @@ import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'screens/chat_screen.dart';
-import 'screens/home_screen.dart';
+import 'constants/colors.dart';
+import 'screens/chat_page.dart';
+import 'screens/home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,25 +22,23 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           useMaterial3: true,
           colorScheme: ColorScheme.fromSeed(
-            seedColor: const Color(0xFF8B4513), // 따뜻한 갈색
+            seedColor: AppColors.primaryBrown,
             brightness: Brightness.light,
           ),
-          // 따뜻한 느낌의 카드 디자인
           cardTheme: CardTheme(
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(16),
             ),
-            color: const Color(0xFFFFF8DC), // 따뜻한 베이지색
+            color: AppColors.backgroundBeige,
           ),
-          // 따뜻한 느낌의 버튼
           elevatedButtonTheme: ElevatedButtonThemeData(
             style: ElevatedButton.styleFrom(
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(12),
               ),
               padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-              backgroundColor: const Color(0xFF8B4513),
-              foregroundColor: Colors.white,
+              backgroundColor: AppColors.buttonBackground,
+              foregroundColor: AppColors.buttonForeground,
             ),
           ),
         ),
@@ -75,9 +74,9 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: const Text('Bears Diary'),
         centerTitle: true,
-        backgroundColor: const Color(0xFFFFF8DC),
+        backgroundColor: AppColors.backgroundBeige,
         elevation: 0,
-        foregroundColor: const Color(0xFF8B4513),
+        foregroundColor: AppColors.textBrown,
         actions: [
           IconButton(
             icon: const Icon(Icons.pets),
@@ -89,9 +88,9 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: IndexedStack(
         index: _selectedIndex,
-        children: const [
-          HomeScreen(),
-          ChatScreen(),
+        children: [
+          const HomePage(),
+          const ChatPage(),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -107,10 +106,10 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
-        selectedItemColor: const Color(0xFF8B4513),
-        unselectedItemColor: Colors.grey,
+        selectedItemColor: AppColors.textBrown,
+        unselectedItemColor: AppColors.textGrey,
         type: BottomNavigationBarType.fixed,
-        backgroundColor: const Color(0xFFFFF8DC),
+        backgroundColor: AppColors.backgroundBeige,
       ),
     );
   }

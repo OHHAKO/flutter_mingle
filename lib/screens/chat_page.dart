@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
-class ChatScreen extends StatelessWidget {
-  const ChatScreen({super.key});
+import '../constants/colors.dart';
+
+class ChatPage extends StatelessWidget {
+  const ChatPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,13 +15,13 @@ class ChatScreen extends StatelessWidget {
           margin: const EdgeInsets.only(bottom: 12),
           child: ListTile(
             leading: const CircleAvatar(
-              backgroundColor: Color(0xFF8B4513),
-              child: Icon(Icons.pets, color: Colors.white),
+              backgroundColor: AppColors.primaryBrown,
+              child: Icon(Icons.pets, color: AppColors.iconWhite),
             ),
             title: Text(
               'Bear Chat ${index + 1}',
               style: const TextStyle(
-                color: Color(0xFF8B4513),
+                color: AppColors.textBrown,
                 fontWeight: FontWeight.bold,
               ),
             ),
