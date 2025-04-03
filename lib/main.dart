@@ -2,7 +2,7 @@ import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'constants/colors.dart';
+import 'constants/design_system.dart';
 import 'screens/chat_page.dart';
 import 'screens/home_page.dart';
 
@@ -22,23 +22,26 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           useMaterial3: true,
           colorScheme: ColorScheme.fromSeed(
-            seedColor: AppColors.primaryBrown,
+            seedColor: DesignSystem.primaryBrown,
             brightness: Brightness.light,
           ),
           cardTheme: CardTheme(
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(16),
+              borderRadius: BorderRadius.circular(DesignSystem.radiusLarge),
             ),
-            color: AppColors.backgroundBeige,
+            color: DesignSystem.backgroundBeige,
           ),
           elevatedButtonTheme: ElevatedButtonThemeData(
             style: ElevatedButton.styleFrom(
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12),
+                borderRadius: BorderRadius.circular(DesignSystem.radiusMedium),
               ),
-              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-              backgroundColor: AppColors.buttonBackground,
-              foregroundColor: AppColors.buttonForeground,
+              padding: EdgeInsets.symmetric(
+                horizontal: DesignSystem.spacing24,
+                vertical: DesignSystem.spacing16,
+              ),
+              backgroundColor: DesignSystem.primaryBrown,
+              foregroundColor: DesignSystem.surface,
             ),
           ),
         ),
@@ -74,9 +77,9 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: const Text('Bears Diary'),
         centerTitle: true,
-        backgroundColor: AppColors.backgroundBeige,
+        backgroundColor: DesignSystem.backgroundBeige,
         elevation: 0,
-        foregroundColor: AppColors.textBrown,
+        foregroundColor: DesignSystem.textBrown,
         actions: [
           IconButton(
             icon: const Icon(Icons.pets),
@@ -106,10 +109,10 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
-        selectedItemColor: AppColors.textBrown,
-        unselectedItemColor: AppColors.textGrey,
+        selectedItemColor: DesignSystem.textBrown,
+        unselectedItemColor: DesignSystem.textGrey,
         type: BottomNavigationBarType.fixed,
-        backgroundColor: AppColors.backgroundBeige,
+        backgroundColor: DesignSystem.backgroundBeige,
       ),
     );
   }

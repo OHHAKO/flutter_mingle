@@ -2,36 +2,34 @@ import 'package:flutter/material.dart';
 
 class DesignSystem {
   // Colors
-  static const Color primary = Color(0xFF8B4513);
-  static const Color secondary = Color(0xFFFFF8DC);
-  static const Color background = Color(0xFFFFF8DC);
+  static const Color primaryBrown = Color(0xFF8B4513);
+  static const Color backgroundBeige = Color(0xFFFFF8DC);
   static const Color surface = Colors.white;
-  static const Color error = Color(0xFFB00020);
+  static const Color textBrown = Color(0xFF8B4513);
+  static const Color textGrey = Colors.grey;
   
   // Typography
-  static const TextStyle h1 = TextStyle(
-    fontSize: 32,
-    fontWeight: FontWeight.bold,
-    color: primary,
-  );
-  
-  static const TextStyle h2 = TextStyle(
+  static const TextStyle titleLarge = TextStyle(
     fontSize: 24,
     fontWeight: FontWeight.bold,
-    color: primary,
+    color: textBrown,
   );
   
-  static const TextStyle body1 = TextStyle(
+  static const TextStyle headlineSmall = TextStyle(
+    fontSize: 20,
+    color: textBrown,
+  );
+  
+  static const TextStyle bodyMedium = TextStyle(
     fontSize: 16,
-    color: primary,
+    color: textBrown,
   );
   
   // Spacing
-  static const double spacing4 = 4.0;
   static const double spacing8 = 8.0;
   static const double spacing16 = 16.0;
+  static const double spacing20 = 20.0;
   static const double spacing24 = 24.0;
-  static const double spacing32 = 32.0;
   
   // Border Radius
   static const double radiusSmall = 8.0;
@@ -47,18 +45,9 @@ class DesignSystem {
     ),
   ];
   
-  static List<BoxShadow> shadowMedium = [
-    BoxShadow(
-      color: Colors.black.withOpacity(0.15),
-      blurRadius: 8,
-      offset: const Offset(0, 4),
-    ),
-  ];
-  
   // Animation Durations
   static const Duration animationFast = Duration(milliseconds: 200);
   static const Duration animationNormal = Duration(milliseconds: 300);
-  static const Duration animationSlow = Duration(milliseconds: 500);
   
   // Breakpoints
   static const double mobileBreakpoint = 600.0;

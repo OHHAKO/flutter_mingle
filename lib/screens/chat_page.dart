@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../constants/colors.dart';
+import '../constants/design_system.dart';
 
 class ChatPage extends StatelessWidget {
   const ChatPage({super.key});
@@ -8,20 +8,20 @@ class ChatPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      padding: const EdgeInsets.all(16),
+      padding: EdgeInsets.all(DesignSystem.spacing16),
       itemCount: 5,
       itemBuilder: (context, index) {
         return Card(
-          margin: const EdgeInsets.only(bottom: 12),
+          margin: EdgeInsets.only(bottom: DesignSystem.spacing8),
           child: ListTile(
-            leading: const CircleAvatar(
-              backgroundColor: AppColors.primaryBrown,
-              child: Icon(Icons.pets, color: AppColors.iconWhite),
+            leading: CircleAvatar(
+              backgroundColor: DesignSystem.primaryBrown,
+              child: Icon(Icons.pets, color: DesignSystem.surface),
             ),
             title: Text(
               'Bear Chat ${index + 1}',
               style: const TextStyle(
-                color: AppColors.textBrown,
+                color: DesignSystem.textBrown,
                 fontWeight: FontWeight.bold,
               ),
             ),

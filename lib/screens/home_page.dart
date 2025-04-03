@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../constants/colors.dart';
+import '../constants/design_system.dart';
 import '../main.dart';
 
 class HomePage extends StatelessWidget {
@@ -13,35 +13,30 @@ class HomePage extends StatelessWidget {
 
     return Column(
       children: [
-        const SizedBox(height: 20),
+        SizedBox(height: DesignSystem.spacing20),
         Card(
-          margin: const EdgeInsets.symmetric(horizontal: 16),
+          margin: EdgeInsets.symmetric(horizontal: DesignSystem.spacing16),
           child: Padding(
-            padding: const EdgeInsets.all(20),
+            padding: EdgeInsets.all(DesignSystem.spacing20),
             child: Column(
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Icon(Icons.pets, size: 32, color: AppColors.iconBrown),
-                    const SizedBox(width: 8),
+                    Icon(Icons.pets, size: 32, color: DesignSystem.primaryBrown),
+                    SizedBox(width: DesignSystem.spacing8),
                     Text(
                       'Today\'s Thought',
-                      style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                        color: AppColors.textBrown,
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: DesignSystem.titleLarge,
                     ),
                   ],
                 ),
-                const SizedBox(height: 16),
+                SizedBox(height: DesignSystem.spacing16),
                 Text(
                   appState.current.asLowerCase,
-                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                    color: AppColors.textBrown,
-                  ),
+                  style: DesignSystem.headlineSmall,
                 ),
-                const SizedBox(height: 20),
+                SizedBox(height: DesignSystem.spacing20),
                 ElevatedButton.icon(
                   onPressed: () {
                     print('button pressed!');
